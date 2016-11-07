@@ -23,19 +23,9 @@ int main() {
     string input = "";
     // prompts the user to enter a file name
     // string FileName;
-    cout << "Hello! Please enter a file name: ";
+    cout << "Hello! Please enter a file name (test file is Test.txt): ";
     getline(cin, input);
     
-    // create a file
-    /*ofstream fout;
-    fout.open("Testing123.txt");
-    
-    fout << "hi\n";
-    
-    fout.close();*/
-    
-    
-    //
     int count = 0;
     fstream iofile(input, ios::in | ios::out); // opens file, etc.
     if (!iofile) { // if the file can't be opened
@@ -44,13 +34,15 @@ int main() {
     
     else
     {
-        // for some reason it is counting the number of words??
-        char character;
+        char character; // char variable created
         while (iofile >> character) {
-            count++;
+            count++; // increments count every time a character is recorded
         }
+
+		// end of file operations
         iofile.clear();
         iofile.seekg(0, ios::end);
+
         // Displays the number characters in the file
         cout << "\n\nThis file has " << count << " characters." << endl;
     }
