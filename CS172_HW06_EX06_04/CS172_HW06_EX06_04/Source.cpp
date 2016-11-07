@@ -8,6 +8,3 @@
 using namespace std;
 
 // Implement the relational operators <, <=, ==, !=, >, >= in Circle class
-int main() {
-
-}
