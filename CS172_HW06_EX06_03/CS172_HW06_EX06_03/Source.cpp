@@ -21,6 +21,9 @@
 
 using namespace std;
 
+// function that sets up the components of the map
+// delim = tab (or four spaces)
+// string is the name of baby
 vector<string> split(const string &s, char delim) {
     stringstream ss(s);
     string item;
@@ -46,12 +49,13 @@ int main() {
     cout << "Enter the name: ";
     cin >> name;
     
-    // opening the files
+    // open the files
     ifstream fin2010("Babynameranking2010.txt", ios::in | ios::out);
     ifstream fin2011("Babynameranking2011.txt", ios::in | ios::out);
     ifstream fin2012("Babynameranking2012.txt", ios::in | ios::out);
     ifstream fin2013("Babynameranking2013.txt", ios::in | ios::out);
     ifstream fin2014("Babynameranking2014.txt", ios::in | ios::out);
+
     // checking if valid or file exists
     if (!fin2010) {
         cout << "can't open Babynameranking2010.txt file" << endl;
@@ -69,9 +73,6 @@ int main() {
         cout << "can't open Babynameranking2014.txt file" << endl;
     }
     
-    //Test
-    //cout << "Files correctly opened" << endl;
-    
     // create map
     map<string, string> map_2010m; // 2010 males
     map<string, string> map_2010f; // 2010 females
@@ -83,17 +84,15 @@ int main() {
     map<string, string> map_2013f; // 2013 females
     map<string, string> map_2014m; // 2014 males
     map<string, string> map_2014f; // 2014 females
-    vector<int> Cat;
     
-    
-    string line;
     // Creates a vector for the split up line based on the tab for 2010 (loading maps)
-    while (getline(fin2010, line)) {
+	string line;
+    while (getline(fin2010, line)) { // gets each line of the text file of baby names
         
-        vector<string> vec = split(line, '\t');
+        vector<string> vec = split(line, '\t'); // \t is the delim. in this case
         
-        map_2010m[vec[1]] = vec[2];
-        map_2010f[vec[3]] = vec[4];
+        map_2010m[vec[1]] = vec[2]; // links columns 1 and 2 (boy baby names) to the map for 2010
+        map_2010f[vec[3]] = vec[4]; // links columns 3 and 4 (girl baby names) to the map for 2010
     }
     
     // Creates a vector for the split up line based on the tab for 2011 (loading maps)
@@ -101,8 +100,8 @@ int main() {
         
         vector<string> vec = split(line, '\t');
         
-        map_2011m[vec[1]] = vec[2];
-        map_2011f[vec[3]] = vec[4];
+        map_2011m[vec[1]] = vec[2]; // links columns 1 and 2 (boy baby names) to the map for 2011
+        map_2011f[vec[3]] = vec[4]; // links columns 3 and 4 (girl baby names) to the map for 2011
     }
     
     // Creates a vector for the split up line based on the tab for 2012 (loading maps)
@@ -110,8 +109,8 @@ int main() {
         
         vector<string> vec = split(line, '\t');
         
-        map_2012m[vec[1]] = vec[2];
-        map_2012f[vec[3]] = vec[4];
+        map_2012m[vec[1]] = vec[2]; // links columns 1 and 2 (boy baby names) to the map for 2012
+        map_2012f[vec[3]] = vec[4]; // links columns 3 and 4 (girl baby names) to the map for 2012
     }
     
     // Creates a vector for the split up line based on the tab for 2013 (loading maps)
@@ -119,8 +118,8 @@ int main() {
         
         vector<string> vec = split(line, '\t');
         
-        map_2013m[vec[1]] = vec[2];
-        map_2013f[vec[3]] = vec[4];
+        map_2013m[vec[1]] = vec[2]; // links columns 1 and 2 (boy baby names) to the map for 2013
+        map_2013f[vec[3]] = vec[4]; // links columns 3 and 4 (girl baby names) to the map for 2013
     }
     
     // Creates a vector for the split up line based on the tab for 2014 (loading maps)
@@ -128,30 +127,34 @@ int main() {
         
         vector<string> vec = split(line, '\t');
         
-        map_2014m[vec[1]] = vec[2];
-        map_2014f[vec[3]] = vec[4];
+        map_2014m[vec[1]] = vec[2]; // links columns 1 and 2 (boy baby names) to the map for 2014
+        map_2014f[vec[3]] = vec[4]; // links columns 3 and 4 (girl baby names) to the map for 2014
     }
     
-    
-    
+	// pair.first represents the name of the baby for the line
+	// pair.second represents the ranking of the baby for the line
     // 2010: checking the year, gender, and name to determine the rank
     if (year == 2010) {
         if (gender == 'M') {
-            for (const auto &pair : map_2010m) {
+            for (const auto &pair : map_2010m) { // cycles through the 2010 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2010" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2010" << endl;
         }
-        else {
-            for (const auto &pair : map_2010f) {
+        else { // if not male, female
+            for (const auto &pair : map_2010f) { // cycles through the 2010 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2010" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2010" << endl;
         }
     }
@@ -159,21 +162,25 @@ int main() {
     // 2011: checking the year, gender, and name to determine the rank
     else if (year == 2011) {
         if (gender == 'M') {
-            for (const auto &pair : map_2011m) {
+            for (const auto &pair : map_2011m) { // cycles through the 2011 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2011" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2011" << endl;
         }
-        else {
-            for (const auto &pair : map_2011f) {
+        else { // if not male, female
+            for (const auto &pair : map_2011f) { // cycles through the 2011 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2011" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2011" << endl;
         }
     }
@@ -181,21 +188,25 @@ int main() {
     // 2012: checking the year, gender, and name to determine the rank
     else if (year == 2012) {
         if (gender == 'M') {
-            for (const auto &pair : map_2012m) {
+            for (const auto &pair : map_2012m) { // cycles through the 2012 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2012" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2012" << endl;
         }
-        else {
-            for (const auto &pair : map_2012f) {
+        else { // if not male, female
+            for (const auto &pair : map_2012f) { // cycles through the 2012 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2012" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2012" << endl;
         }
     }
@@ -203,21 +214,25 @@ int main() {
     // 2013: checking the year, gender, and name to determine the rank
     if (year == 2013) {
         if (gender == 'M') {
-            for (const auto &pair : map_2013m) {
+            for (const auto &pair : map_2013m) { // cycles through the 2013 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2013" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2013" << endl;
         }
-        else {
-            for (const auto &pair : map_2013f) {
+        else { // if not male, female
+            for (const auto &pair : map_2013f) { // cycles through the 2013 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2013" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2013" << endl;
         }
     }
@@ -225,21 +240,25 @@ int main() {
     // 2014: checking the year, gender, and name to determine the rank
     if (year == 2014) {
         if (gender == 'M') {
-            for (const auto &pair : map_2014m) {
+            for (const auto &pair : map_2014m) { // cycles through the 2014 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2014" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2014" << endl;
         }
-        else {
-            for (const auto &pair : map_2014f) {
+        else { // if not male, female
+            for (const auto &pair : map_2014f) { // cycles through the 2014 map
                 if (pair.first == name) {
+					// if the key matches the name, output the name and rank
                     cout << pair.first << " is ranked #" << pair.second << " in year 2014" << endl;
                     break;
                 }
             }
+			// if the key does not match any of names in the file
             cout << "The name " << name << " is not ranked in year 2014" << endl;
         }
     }
