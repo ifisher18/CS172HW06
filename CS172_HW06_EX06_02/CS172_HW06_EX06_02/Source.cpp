@@ -14,13 +14,13 @@ using namespace std;
 int main() {
 	string input = "";
 	// prompts the user to enter a file name
-	string FileName;
+	// string FileName;
 	cout << "Hello! Please enter a file name: ";
 	getline(cin, input);
 
 	//
 	int count = 0;
-	fstream iofile(FileName, ios::in | ios::out); // opens file, etc.
+	fstream iofile(input, ios::in | ios::out); // opens file, etc.
 	if (!iofile) {
 		cout << "Error: can't open file" << endl;
 	}
