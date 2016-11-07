@@ -7,7 +7,7 @@
 using namespace std;
 
 // Constructors
-Complex::Complex(a, b) {}
+Complex (a, b) {}
 Complex::Complex(a) {}
 Complex::Complex() {}
 

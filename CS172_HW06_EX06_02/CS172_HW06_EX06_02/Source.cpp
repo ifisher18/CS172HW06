@@ -21,12 +21,13 @@ int main() {
 	//
 	int count = 0;
 	fstream iofile(input, ios::in | ios::out); // opens file, etc.
-	if (!iofile) {
+	if (!iofile) { // if the file can't be opened
 		cout << "Error: can't open file" << endl;
 	}
 
 	else
 	{
+		// for some reason it is counting the number of words??
 		string character;
 		while (iofile >> character) {
 			count++;
@@ -34,14 +35,7 @@ int main() {
 		iofile.clear();
 		iofile.seekg(0, ios::end);
 		// Displays the number characters in the file
-		iofile << "\n\nThis file has " << count << " characters." << endl;
+		cout << "\n\nThis file has " << count << " characters." << endl;
 	}
-
-
-
-
-
-	
-
-	
+	return 0;
 }
