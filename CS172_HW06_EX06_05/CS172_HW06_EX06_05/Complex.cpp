@@ -45,7 +45,50 @@ string Complex::toString(int toStringVal) {
 
 // function that returns the real part of a complex number
 double Complex::getRealPart() {}
+
+// function that returns the Imaginary part of a complex number
 double Complex::getImaginaryPart() {}
+
+// overload operator functions!! (need to implement these
+// overload +
+double Complex::operator+(Complex& that) {}
+// overload -
+double Complex::operator-(Complex& that) {}
+// overload *
+double Complex::operator*(Complex& that) {}
+// overload /
+double Complex::operator/(Complex& that) {}
+// overload +=
+double Complex::operator+=(Complex& that) {}
+// overload -=
+double Complex::operator-=(Complex& that) {}
+// overload *=
+double Complex::operator*=(Complex& that) {}
+// overload /=
+double Complex::operator/=(Complex& that) {}
+// overload []
+double Complex::operator[](Complex& that) {}
+
+// not sure on this one how to define in header file
+// overload unary +
+double Complex::operator+(Complex& that) {}
+// overload unary -
+double operator+(Complex& that);
+// overload prefix ++
+
+// having issues with these
+double operator++(Complex& that);
+// overload prefix --
+double operator--(Complex& that);
+// overload postfix ++
+double operator++(Complex& that);
+// overload postfix --
+double operator--(Complex& that);
+
+// overload <<
+double operator<<(Complex& that);
+// overload >>
+double operator >> (Complex& that);
 
 
 

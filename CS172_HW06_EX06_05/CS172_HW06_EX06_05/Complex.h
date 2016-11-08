@@ -16,11 +16,11 @@ public:
 	// other functions
 	double add();
 	double subtract();
-	double multiply(double a_mult, double b_mult, double c_mult, double d_mult);
-	double divide(double a_div, double b_div, double c_div, double d_div);
-	double abs(double a_abs, double b_abs);
-	double subtract(double a_sub, double b_sub, double c_sub, double d_sub);
-	string toString(int toStringVal);
+	double multiply(double, double, double, double);
+	double divide(double, double, double, double);
+	double abs(double, double);
+	double subtract(double, double, double, double);
+	string toString(int);
 	double getRealPart();
 	double getImaginaryPart();
 
@@ -31,20 +31,40 @@ public:
 
 	// overload operator functions!!
 	// overload +
+	double operator+(Complex& that);
 	// overload -
+	double operator-(Complex& that);
 	// overload *
+	double operator*(Complex& that);
 	// overload /
+	double operator/(Complex& that);
 	// overload +=
+	double operator+=(Complex& that);
 	// overload -=
+	double operator-=(Complex& that);
 	// overload *=
+	double operator*=(Complex& that);
 	// overload /=
+	double operator/=(Complex& that);
 	// overload []
+	double operator[](Complex& that);
 	// overload unary +
+	double operator+(Complex& that);
 	// overload unary -
+	double operator+(Complex& that);
 	// overload prefix ++
+
+	// having issues with these
+	double operator++(Complex& that);
 	// overload prefix --
+	double operator--(Complex& that);
 	// overload postfix ++
+	double operator++(Complex& that);
 	// overload postfix --
+	double operator--(Complex& that);
+
 	// overload <<
+	double operator<<(Complex& that);
 	// overload >>
+	double operator>>(Complex& that);
 };
