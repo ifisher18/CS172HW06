@@ -14,12 +14,13 @@ public:
 	double d;
 
 	// other functions
-	double add(double a_add, double b_add, double c_add, double d_add);
+	double add();
 	double subtract();
-	double multiply();
-	double divide();
-	double abs();
-	string toString();
+	double multiply(double a_mult, double b_mult, double c_mult, double d_mult);
+	double divide(double a_div, double b_div, double c_div, double d_div);
+	double abs(double a_abs, double b_abs);
+	double subtract(double a_sub, double b_sub, double c_sub, double d_sub);
+	string toString(int toStringVal);
 	double getRealPart();
 	double getImaginaryPart();
 
@@ -28,5 +29,22 @@ public:
 	Complex(double a);
 	Complex();
 
-
+	// overload operator functions!!
+	// overload +
+	// overload -
+	// overload *
+	// overload /
+	// overload +=
+	// overload -=
+	// overload *=
+	// overload /=
+	// overload []
+	// overload unary +
+	// overload unary -
+	// overload prefix ++
+	// overload prefix --
+	// overload postfix ++
+	// overload postfix --
+	// overload <<
+	// overload >>
 };

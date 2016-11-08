@@ -15,6 +15,13 @@ int main() {
 	double b_input;
 	double c_input;
 	double d_input;
+
+	// overload operator functions!!
+	// overload +
+	// overload -
+	// overload *
+	// overload /
+	// overload [] so that [0] returns a and [1] returns b
 	
 	cout << "Welcome! This program displays the results of adding, subtracting, multiplying, dividing, and finding the absolute value of complex numbers." << endl;
 	cout << endl;
