@@ -22,6 +22,10 @@ int main() {
 	cout << "Circle circle1" << endl;
 	cout << "Circle circle2(6.0)" << endl;
 	cout << "Circle circle3(10.0)" << endl;
+	cout << "Circle circle4" << endl;
+	cout << "Circle circle5(10.0)" << endl;
+	cout << endl;
+	cout << endl;
 
 	// Testing < operator function
 	if (circle1 < circle2) {
@@ -56,9 +60,38 @@ int main() {
 	else cout << "circle3 is not equal to circle4" << endl;
 	cout << endl;
 
-	// Testing == operator function
-	if
+	// Testing != operator function
+	if (circle1 != circle2) {
+		cout << "circle1 is not equal to circle2" << endl;
+		cout << "The area of the circle of radius " << circle1.getRadius() << " is "
+			<< circle1.getArea() << endl;
+		cout << "The area of the circle of radius " << circle2.getRadius() << " is "
+			<< circle2.getArea() << endl << endl;
+	}
+	else cout << "circle1 is equal to circle2" << endl;
+	cout << endl;
 
+	// Testing > operator function
+	if (circle3 > circle4) {
+		cout << "circle3 is greater than circle4" << endl;
+		cout << "The area of the circle of radius " << circle1.getRadius() << " is "
+			<< circle1.getArea() << endl;
+		cout << "The area of the circle of radius " << circle2.getRadius() << " is "
+			<< circle2.getArea() << endl << endl;
+	}
+	else cout << "circle3 is not greater than circle4" << endl;
+	cout << endl;
+
+	// Testing >= operator function
+	if (circle4 >= circle1) {
+		cout << "circle4 is greater than or equal to circle1" << endl;
+		cout << "The area of the circle of radius " << circle1.getRadius() << " is "
+			<< circle1.getArea() << endl;
+		cout << "The area of the circle of radius " << circle2.getRadius() << " is "
+			<< circle2.getArea() << endl << endl;
+	}
+	else cout << "circle4 is less than circle1" << endl;
+	cout << endl;
 	
 
 }
