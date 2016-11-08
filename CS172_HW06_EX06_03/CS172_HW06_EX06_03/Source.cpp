@@ -21,6 +21,9 @@
 
 using namespace std;
 
+// I created this program using maps, a topic that has not been taught yet in my CS classes.
+// I tried to comment as much as possible to communicate the basic logic of the program
+
 // function that sets up the components of the map
 // delim = tab (or four spaces)
 // string is the name of baby
@@ -50,11 +53,11 @@ int main() {
     cin >> name;
     
     // open the files
-    ifstream fin2010("Babynameranking2010.txt", ios::in | ios::out);
-    ifstream fin2011("Babynameranking2011.txt", ios::in | ios::out);
-    ifstream fin2012("Babynameranking2012.txt", ios::in | ios::out);
-    ifstream fin2013("Babynameranking2013.txt", ios::in | ios::out);
-    ifstream fin2014("Babynameranking2014.txt", ios::in | ios::out);
+    ifstream fin2010("Babynameranking2010.txt", ios::in | ios::out); // baby rankings 2010
+    ifstream fin2011("Babynameranking2011.txt", ios::in | ios::out); // baby rankings 2011
+    ifstream fin2012("Babynameranking2012.txt", ios::in | ios::out); // baby rankings 2012
+    ifstream fin2013("Babynameranking2013.txt", ios::in | ios::out); // baby rankings 2013
+    ifstream fin2014("Babynameranking2014.txt", ios::in | ios::out); // baby rankings 2014
 
     // checking if valid or file exists
     if (!fin2010) {
@@ -144,7 +147,7 @@ int main() {
                 }
             }
 			// if the key does not match any of names in the file
-            cout << "The name " << name << " is not ranked in year 2010" << endl;
+			cout << "The name " << name << " is not ranked in year 2010" << endl;
         }
         else { // if not male, female
             for (const auto &pair : map_2010f) { // cycles through the 2010 map
