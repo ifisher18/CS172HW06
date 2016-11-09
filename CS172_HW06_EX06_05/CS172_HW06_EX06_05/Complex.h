@@ -12,16 +12,26 @@ public:
 	double b;
 	double c;
 	double d;
+	// 
 
 	// other functions
+	// function that adds two complex numbers together
 	double add();
+	// function that subtracts two complex numbers from each other
 	double subtract();
+	// function that multiplies two complex numbers together
 	double multiply(double, double, double, double);
+	// function that divides two complex numbers
 	double divide(double, double, double, double);
+	// function that takes the absolute value of a complex number (distance from the orgin)
 	double abs(double, double);
+	// function that subtracts two complex numbers of double type
 	double subtract(double, double, double, double);
+	// function that converts a complex number to a string
 	string toString(int);
+	// function that gets the real part of a complex number
 	double getRealPart();
+	// function that gets the imaginary part of a complex number
 	double getImaginaryPart();
 
 	//Constructors

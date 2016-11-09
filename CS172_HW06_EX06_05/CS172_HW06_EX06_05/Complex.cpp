@@ -19,10 +19,12 @@ Complex::Complex () {
 	d = 0;
 }
 
-// Constructor for 
+// Constructor for default value of a
 Complex::Complex(double a) {
 	a = 0;
 }
+
+// Constructor for another default set of values for Complex
 Complex::Complex() {
 	a = 0;
 	b = 0;
@@ -116,7 +118,9 @@ double Complex::operator+(Complex& that) {
 	return (-1 * that);
 }
 // overload prefix ++
-
+double Complex::operator++(Complex& that) {
+	return that++;
+}
 // having issues with these
 double Complex::operator++(Complex& that) {
 	return ++that;

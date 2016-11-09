@@ -6,11 +6,13 @@
 
 #include <iostream>
 #include <string>
-#include "Complex.h" // include the header file
+#include "Complex.h" // include the header file "Complex.h"
 
 using namespace std;
 
 int main() {
+
+	// create four double variables that hold the inputed user values
 	double a_input;
 	double b_input;
 	double c_input;
@@ -35,13 +37,14 @@ int main() {
 	}
 	// overload [] so that [0] returns a and [1] returns b
 	double Complex::operator[](Complex& that) {
-		if ([that] == [0]) {
+		if ([that] == [0]) { // if the memory location of that equals 0, then return a
 			return a;
 		}
-		else if ([that] == [1]) {
+		else if ([that] == [1]) { // if the memory location of that equals 1, then return b
 			return b;
 		}
 
+	// Test program that implements class with 2 sample inputed complex numbers
 	cout << "Welcome! This program displays the results of adding, subtracting, multiplying, dividing, and finding the absolute value of complex numbers." << endl;
 	cout << endl;
 
