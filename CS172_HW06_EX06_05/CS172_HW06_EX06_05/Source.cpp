@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <string>
-#include "Complex.h"
+#include "Complex.h" // include the header file
 
 using namespace std;
 
@@ -16,13 +16,32 @@ int main() {
 	double c_input;
 	double d_input;
 
-	// overload operator functions!!
+	// overload operator functions!! (as nonmember functions)
 	// overload +
+	double operator+(Complex& that) {
+		return that.add();
+	}
 	// overload -
+	double operator-(Complex& that) {
+		return that.subtract();
+	}
 	// overload *
+	double operator*(Complex& that) {
+		return that.multiply();
+	}
 	// overload /
+	double operator/(Complex& that) {
+		return that.divide();
+	}
 	// overload [] so that [0] returns a and [1] returns b
-	
+	double Complex::operator[](Complex& that) {
+		if ([that] == [0]) {
+			return a;
+		}
+		else if ([that] == [1]) {
+			return b;
+		}
+
 	cout << "Welcome! This program displays the results of adding, subtracting, multiplying, dividing, and finding the absolute value of complex numbers." << endl;
 	cout << endl;
 
@@ -37,10 +56,28 @@ int main() {
 	cin >> c_input >> " " >> d_input;
 
 	// output addition:
+	cout << "(" << a_input << " + " << b_input << "i)";
+	cout << " + (" << c_input << " + " << d_input << "i) = " << add(a_input, c_input) << " + " << add(b_input, c_input) << "i" << endl;
+	cout << endl;
+
 	// output subraction:
+	cout << "(" << a_input << " + " << b_input << "i)";
+	cout << " - (" << c_input << " + " << d_input << "i) = " << subtract(a_input, c_input) << " + " << subtract(b_input, c_input) << "i" << endl;
+	cout << endl;
+
 	// output multiplication:
+	cout << "(" << a_input << " + " << b_input << "i)";
+	cout << " * (" << c_input << " + " << d_input << "i) = " << multiply(a_input, c_input) << " + " << multiply(b_input, c_input) << "i" << endl;
+	cout << endl;
+
 	// output division:
+	cout << "(" << a_input << " + " << b_input << "i)";
+	cout << " / (" << c_input << " + " << d_input << "i) = " << divide(a_input, c_input) << " + " << divide(b_input, c_input) << "i" << endl;
+	cout << endl;
+
 	// output absolute value (distance from origin)
+	cout << "|" << a_input << " + " << b_input << "| = " << abs(a_input, b_input) << endl;
+	cout << endl;
 
 	cout << "Have a nice day!" << endl;
 }

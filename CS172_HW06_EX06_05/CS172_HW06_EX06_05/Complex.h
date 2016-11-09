@@ -50,11 +50,13 @@ public:
 	double operator[](Complex& that);
 	// overload unary +
 	double operator+(Complex& that);
+
 	// overload unary -
 	double operator+(Complex& that);
-	// overload prefix ++
+	
 
 	// having issues with these
+	// overload prefix ++
 	double operator++(Complex& that);
 	// overload prefix --
 	double operator--(Complex& that);
